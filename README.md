@@ -6,6 +6,7 @@ I use
 
 -webpack-dev-server@2.7.1 'cause of UglifyJS Error: Unexpected Token: Name (urlParts)
  => https://github.com/webpack/webpack-dev-server/issues/1101
+
 -UglifyJS@2.8.29 'cause of unable to process ES6 and Error after Upgrading to Webpack@3.8.1
  => https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/31
 
