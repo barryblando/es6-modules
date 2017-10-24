@@ -16,7 +16,7 @@ Kill a currently using port on localhost in windows? When Dev Server F*cks Up.
 
 Step one: [Terminal]
 
-netstat -ano | findstr :yourPortNumber (Sample 1000)
+netstat -ano | findstr :yourPortNumber (Sample 9000)
 
   TCP    127.0.0.1:9000         0.0.0.0:0              LISTENING       8920 <== PID
   TCP    127.0.0.1:58337        127.0.0.1:9000         TIME_WAIT       0
