@@ -25,3 +25,4 @@ const age = 100;
 const dog = 'snickers';
 
 export { age as old, dog };
+

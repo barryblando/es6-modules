@@ -1,33 +1,51 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const nodeEnv = process.env.NODE_ENV || 'production';
+// We are using node's native package 'path'
+// https://nodejs.org/api/path.html
 const path = require('path');
 
 // Constant with out paths
 const paths = {
-  DIST: path.resolve(__dirname, '_build'),
+  BUILD: path.join(__dirname, '_build'),
+  SRC: path.resolve(__dirname, 'src'),
   JS: path.resolve(__dirname, 'src/js')
 };
 
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    file: './app.js'
-  },
+  entry: path.join(paths.JS, 'app.js'),
   output: {
-    filename: '_build/bundle.js'
+    path: paths.BUILD,
+    filename: 'app.bundle.js'
+  },
+  // Dev server config: _build as a starting point
+  devServer: {
+    contentBase: './',
+    compress: true,
+    port: 9000
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: [{ loader: 'babel-loader', options: { cacheDirectory: true } }],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
-    // uglify
-    new webpack.optimize.UglifyJsPlugin({
+    // uglify, we'll gonna use beta in order to work for webpack3.8.1, @Update: It won't work for now
+    /* new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+      output: { comments: false },
+      sourceMap: true
+    }), */
+    new UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
       sourceMap: true
@@ -35,6 +53,10 @@ module.exports = {
     // env plugin
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
-    })
+    }),
+    // html to inject script
+    new HtmlWebpackPlugin({
+      template: path.join(paths.SRC, 'index.html'),
+    }),
   ]
 };
