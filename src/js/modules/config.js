@@ -10,7 +10,7 @@
 
 // Named Export
 export const apiKey = 'abc123';
-export const url = 'http://barryblando.com';
+export const url = 'http://abec.com';
 
 // default export
 // export default apiKey;

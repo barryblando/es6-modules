@@ -7,10 +7,15 @@ import { uniq } from 'lodash';
 import insane from 'insane';
 import jsonp from 'jsonp';
 import { apiKey as key, url, sayHi, old, dog } from './modules/config';
+import User, { createURL, gravatar } from './modules/user';
 
-console.log(key, url, old, dog);
-sayHi('Bar');
-
-const ages = [1, 1, 4, 52, 12, 4, 2, 3, 6, 3];
 // get unique number using lodash uniq
-console.log(uniq(ages));
+// console.log(uniq(ages));
+
+const barry = new User('Barry Blando', 'barryblandos@gmail.com', 'barryblando.com');
+const profile = createURL(barry.name);
+const image = gravatar(barry.email);
+console.log(barry);
+console.log(profile);
+console.log(image);
+
