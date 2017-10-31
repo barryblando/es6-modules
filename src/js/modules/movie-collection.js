@@ -1,3 +1,4 @@
+// Extending Class w/ Array
 export default class MovieCollection extends Array {
   // we're gonna use rest to get the array
   constructor(name, ...items) {
@@ -11,5 +12,9 @@ export default class MovieCollection extends Array {
 
   add(movie) {
     this.push(movie);
+  }
+
+  topRated(limit = 10) {
+    return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
   }
 }
