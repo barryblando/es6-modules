@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// this is for development or production environment
 const nodeEnv = process.env.NODE_ENV || 'production';
 // We are using node's native package 'path'
 // https://nodejs.org/api/path.html
@@ -39,7 +40,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    // uglify, we'll gonna use beta in order to work for webpack3.8.1, @Update: It won't work for now
+    // uglify, we'll gonna use beta in order to work for webpack3.8.1, @Update: Beta won't work for now, I downgraded Uglify
     /* new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },

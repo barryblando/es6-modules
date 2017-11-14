@@ -5,7 +5,7 @@ export default class Animal {
     this.belly = [];
   }
 
-  drink () {
+  drink() {
     this.thirst -= 10;
     return this.thirst;
   }
