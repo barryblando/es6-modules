@@ -52,7 +52,7 @@ getPostById(2)
     console.log(post);
     return hydrateAuthor(post); // this function is going to return a Promise itself
   })
-  .then((post) => { // receive the hydrateAuthor post
+  .then((post) => { // receive the hydrated post from hydrateAuthor
     console.log(post);
   })
   .catch((err) => {
