@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // this is for development or production environment
 const nodeEnv = process.env.NODE_ENV || 'production';
@@ -11,7 +12,8 @@ const path = require('path');
 const paths = {
   BUILD: path.join(__dirname, '_build'),
   SRC: path.resolve(__dirname, 'src'),
-  JS: path.resolve(__dirname, 'src/js')
+  JS: path.resolve(__dirname, 'src/js'),
+  SCSS: path.resolve(__dirname, 'src/scss')
 };
 
 module.exports = {
@@ -19,7 +21,7 @@ module.exports = {
   entry: path.join(paths.JS, 'app.js'),
   output: {
     path: paths.BUILD,
-    filename: 'app.bundle.js'
+    filename: 'app.[hash].bundle.js'
   },
   // Dev server config: _build as a starting point
   devServer: {
@@ -33,6 +35,16 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader', options: { cacheDirectory: true } }],
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          // resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader?sourceMap', 'sass-loader?sourceMap'],
+          publicPath: paths.BUILD,
+        }),
       },
     ],
   },
@@ -57,7 +69,17 @@ module.exports = {
     }),
     // html to inject script
     new HtmlWebpackPlugin({
+      title: 'JS Modules',
+      // minify: {
+      //   collapseWhitespace: true // minify html
+      // },
+      // hash: true, // for build versioning and cache busting
       template: path.join(paths.SRC, 'index.html'),
+    }),
+    // extract css
+    new ExtractTextPlugin({
+      filename: 'css/style.[hash].css',
+      allChunks: true
     }),
   ]
 };

@@ -5,3 +5,16 @@ const posts = [
 ];
 
 console.log(posts.map(el => ({ id: el.id })));
+
+function nextInLine(arr, item) {
+  arr.push(item);
+  return arr.shift();
+}
+
+// Test Setup
+const testArr = [1, 2, 3, 4, 5];
+
+// Display Code
+console.log(`Before: ${JSON.stringify(testArr)}`);
+console.log(nextInLine(testArr, 6)); // Modify this line to test
+console.log(`Before: ${JSON.stringify(testArr)}`);

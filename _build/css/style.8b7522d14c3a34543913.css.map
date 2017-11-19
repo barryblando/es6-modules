@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/scss/src/scss/app.scss"],"names":[],"mappings":"AAAA;EAEI,0BAAyB,EAC1B","file":"css/style.8b7522d14c3a34543913.css","sourcesContent":["body {\r\n  p {\r\n    background-color: #faf1bf;\r\n  }\r\n}\n\n\n// WEBPACK FOOTER //\n// ./src/scss/src/scss/app.scss"],"sourceRoot":""}
