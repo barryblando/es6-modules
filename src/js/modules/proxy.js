@@ -22,3 +22,18 @@ const personProxy = new Proxy(person, {
 });
 
 console.log(personProxy.name);
+
+const safeHandler = {
+  set(target, name, value) {
+    const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+    // if no name in target
+    if (!(name in target) && likeKey) {
+      throw new Error(`Oops! Looks like we already have a(n) ${name} property but with the case of ${likeKey}`);
+    }
+    target[name] = value;
+  }
+};
+
+const safety = new Proxy({ id: 100 }, safeHandler);
+
+safety.ID = 200;

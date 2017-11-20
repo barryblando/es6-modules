@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --progress --watch",
+    "server": "webpack-dev-server",
+    "dev": "webpack --progress --watch",
     "prod": "webpack -p"
   },
   "repository": {

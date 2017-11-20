@@ -11,7 +11,7 @@ import User, { createURL, gravatar, rejectedPromise, getPostById, hydrateAuthor 
 import Animal from './modules/animal';
 import Dog from './modules/dog';
 import MovieCollection from './modules/movie-collection';
-import css from '../scss/app.scss';
+import '../scss/app.scss';
 
 // get unique number using lodash uniq
 // console.log(uniq(ages));
