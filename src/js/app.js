@@ -6,7 +6,7 @@
 import { uniq } from 'lodash';
 import insane from 'insane';
 import jsonp from 'jsonp';
-import { apiKey as key, url, sayHi, old, dog } from './modules/config';
+// import { apiKey as key, url, sayHi, old, dog } from './modules/config';
 import User, { createURL, gravatar, rejectedPromise, getPostById, hydrateAuthor } from './modules/user';
 import Animal from './modules/animal';
 import Dog from './modules/dog';

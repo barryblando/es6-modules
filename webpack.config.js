@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 // this is for development or production environment
 const nodeEnv = process.env.NODE_ENV || 'production';
 // We are using node's native package 'path'
@@ -81,5 +82,6 @@ module.exports = {
       filename: 'css/style.[hash].css',
       allChunks: true
     }),
+    new BundleAnalyzerPlugin(),
   ]
 };
