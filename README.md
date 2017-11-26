@@ -1,4 +1,7 @@
 # es6-modules
+
+[![Known Vulnerabilities](https://snyk.io/test/github/barryblando/es6-modules/badge.svg)](https://snyk.io/test/github/barryblando/es6-modules)
+
 NPM ES2015+ Babel Webpack Lodash
 
 ```

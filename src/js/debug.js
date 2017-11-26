@@ -41,3 +41,17 @@ const heading = 'MERRY';
 // get the text content of h2, wrap each letter on a span, and inject it back inside h2
 console.log(spanWrap(heading));
 
+
+const socialMedia = ['FB', 'Twitter', 'LinkedIn'];
+
+console.log(`
+      1. I'm not really always into ${socialMedia.map(el => el)})
+      2. Most of my free time I'm at @Medium, @ThePracticalDev reading articles
+         or @StackOverflow/@github (Opt: Pastime @steam_games (IGN: Retr0_0x315))
+      3. After work gotta do some physique workout commit, push, merge crunches
+      4. Curiosity really hits me all the time, so I'm gonna learn what I don't know.
+          (toolBoxToConfig) => {
+              Advanced CSS & SASS, RWD, PWA, SSR, MERN, AWS, DevOps
+            }
+`);
+
