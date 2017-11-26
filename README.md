@@ -1,11 +1,11 @@
-# es6-modules
+# ES6-Modules
 
 [![Dependencies](https://david-dm.org/barryblando/es6-modules.svg)](#)
 [![Known Vulnerabilities](https://snyk.io/test/github/barryblando/es6-modules/badge.svg)](https://snyk.io/test/github/barryblando/es6-modules)
 
 NPM ES2015+ Babel Webpack Lodash
 
-```
+```DependencyErrors
 I use
 
 -webpack-dev-server@2.7.1 'cause of UglifyJS Error: Unexpected Token: Name (urlParts)
@@ -16,7 +16,7 @@ I use
 
 ```
 
-```
+```Webpack-dev-server
 Kill a currently using port on localhost in windows? When Dev Server F*cks Up.
 
 Step one: [Terminal]
@@ -33,4 +33,8 @@ taskkill //PID typeyourPIDhere //F
 
 (double slashes are needed and //F forcefully terminates the process)
 
+```
+
+```Dependencies
+About the outdated and insecure Dependency, I intended to do it for learning purposes. I'll just fix it sooner.
 ```
