@@ -1,6 +1,7 @@
 # ES6-Modules
 
-[![Dependencies](https://david-dm.org/barryblando/es6-modules.svg)](#)
+[![dependencies Status](https://david-dm.org/barryblando/es6-modules/status.svg)](https://david-dm.org/barryblando/es6-modules)
+[![devDependencies Status](https://david-dm.org/barryblando/es6-modules/dev-status.svg)](https://david-dm.org/barryblando/es6-modules?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/barryblando/es6-modules/badge.svg)](https://snyk.io/test/github/barryblando/es6-modules)
 
 NPM ES2015+ Babel Webpack Lodash
