@@ -17,7 +17,7 @@ function* steps() {
 
   // next called to second request (if something's wrong to the first data this will not run)
   console.log('fetching wes');
-  const wes = yield ajax('https://api.github.com/users/');
+  const wes = yield ajax('https://api.github.com/users/'); // ajax('https://api.github.com/users/' + beers[0]); you can put beers for next fetch
   console.log(wes);
 
   console.log('fetching fat joe');
