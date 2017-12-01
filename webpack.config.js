@@ -11,7 +11,7 @@ const path = require('path');
 
 // Constant with out paths
 const paths = {
-  BUILD: path.join(__dirname, '_build'),
+  BUILD: path.resolve(__dirname, '_build'),
   SRC: path.resolve(__dirname, 'src'),
   JS: path.resolve(__dirname, 'src/js'),
   SCSS: path.resolve(__dirname, 'src/scss')
