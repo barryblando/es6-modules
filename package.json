@@ -6,7 +6,9 @@
   "scripts": {
     "server": "webpack-dev-server",
     "dev": "webpack --progress --watch",
-    "prod": "webpack -p"
+    "prod": "webpack -p",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
     "jquery": "^3.2.1",
     "jsonp": "^0.2.1",
     "lodash": "^4.17.4",
-    "slug": "^0.9.1"
+    "slug": "^0.9.1",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -50,5 +53,6 @@
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.7.1"
-  }
+  },
+  "snyk": true
 }
