@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/barryblando/es6-modules#readme",
   "dependencies": {
-    "axios": "^0.17.0",
+    "axios": "^1.6.3",
     "base-64": "^0.1.0",
     "flickity": "^2.0.10",
     "insane": "^2.6.2",
